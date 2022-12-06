@@ -1,8 +1,12 @@
 package com.abenezermulugeta;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope(scopeName = "prototype")
+// Singleton is the default scope type in Spring
+// @Scope(scopeName = "singleton")
 public class Doctor implements  Staff {
     private String qualification;
 

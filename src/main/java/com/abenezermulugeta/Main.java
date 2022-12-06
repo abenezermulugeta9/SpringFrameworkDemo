@@ -9,7 +9,11 @@ public class Main {
 
 //        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
-        Staff staff = context.getBean(Doctor.class);
+        Doctor staff = context.getBean(Doctor.class);
+        staff.setQualification("Surgeon");
         staff.assist();
+
+        Doctor doctor1 = context.getBean(Doctor.class);
+        doctor1.assist();
     }
 }
